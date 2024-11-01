@@ -1,38 +1,36 @@
-# Inpaint Examples
+# 修复示例 (局部重绘示例)
 
 ![Example](inpaint_example.png)
 
-In this example we will be using this image. Download it and place it in your input folder.
+在此示例中，我们将使用此图像。下载它并将其放在您的输入文件夹中。
 
 ![Example](yosemite_inpaint_example.png)
 
-This image has had part of it erased to alpha with gimp, the alpha channel is what we will be using as a mask for the inpainting. If using GIMP make sure you save the values of the transparent pixels for best results.
+此图像的一部分已使用 gimp 擦除为 alpha，alpha 通道是我们将用作修复的蒙版。如果使用 GIMP，请确保保存透明像素的值以获得最佳效果。
 
-ComfyUI also has a mask editor that can be accessed by right clicking an image in the LoadImage node and "Open in MaskEditor".
+ComfyUI 还具有一个掩码编辑器，可以通过右键单击 LoadImage 节点中的图像并“在 MaskEditor 中打开”来访问。
 
+[可以在ComfyUI](https://github.com/comfyanonymous/ComfyUI)中加载以下图像以获取完整的工作流程。
 
-The following images can be loaded in [ComfyUI](https://github.com/comfyanonymous/ComfyUI) to get the full workflow.
-
-Inpainting a cat with the v2 inpainting model:
+使用 v2 修复模型修复一只猫：
 
 ![Example](inpain_model_cat.png)
 
-Inpainting a woman with the v2 inpainting model:
+使用 v2 修复模型修复女性图像：
 
 ![Example](inpain_model_woman.png)
 
-It also works with non inpainting models. Here's an example with the anythingV3 model:
+它也适用于非修复模型。以下是使用 anythingV3 模型的示例：
 
 ![Example](inpaint_anythingv3_woman.png)
 
-### Outpainting
+### Outpainting (外绘)
 
-You can also use similar workflows for outpainting. Outpainting is the same thing as inpainting. There is a "Pad Image for Outpainting" node to automatically pad the image for outpainting while creating the proper mask. In this example this image will be outpainted:
+您还可以使用类似的工作流程进行外绘。外绘与内绘是一回事。有一个“Pad Image for Outpainting”节点，可以在创建适当的蒙版时自动填充图像以进行外绘。在此示例中，此图像将被外绘：
 
 ![Example](yosemite_outpaint_example.png)
 
-
-Using the v2 inpainting model and the "Pad Image for Outpainting" node (load it in ComfyUI to see the workflow):
+使用 v2 修复模型和“Pad Image for Outpainting”节点（在 ComfyUI 中加载它以查看工作流程）：
 
 ![Example](inpain_model_outpainting.png)
 

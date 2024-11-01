@@ -1,5 +1,14 @@
 # [ComfyUI](https://github.com/comfyanonymous/ComfyUI)示例
 
+> [!note]
+> 
+> 仓库说明：
+> 
+> 原仓库：https://github.com/comfyanonymous/ComfyUI_examples
+> 原仓库部署：https://comfyanonymous.github.io/ComfyUI_examples/
+> 翻译仓库：https://github.com/LincZero/ComfyUI_examples
+> 翻译仓库部署：https://linczero.github.io/MdNote_Other/ComfyUI_examples/
+
 此[repo包含使用](https://github.com/comfyanonymous/ComfyUI_examples)[ComfyUI](https://github.com/comfyanonymous/ComfyUI)可实现的示例。此 repo 中的所有图像都包含元数据，这意味着可以使用“加载”按钮将它们加载到 ComfyUI 中（或拖到窗口上），以获取用于创建图像的完整工作流程。
 
 如果你不知道这一切是如何运作的，那么一个好的起点是：

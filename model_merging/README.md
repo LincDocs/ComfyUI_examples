@@ -1,38 +1,36 @@
-# Model Merging Examples
+# 模型合并示例
 
-The idea behind these workflows is that you can do complex workflows with multiple model merges, test them and then save the checkpoint by unmuting the CheckpointSave node once you are happy with the results. By default the CheckpointSave node saves checkpoints to the output/checkpoints/ folder.
+这些工作流程背后的想法是，您可以使用多个模型合并来执行复杂的工作流程，测试它们，然后在对结果满意后通过取消静音 CheckpointSave 节点来保存检查点。默认情况下，CheckpointSave 节点将检查点保存到 output/checkpoints/ 文件夹。
 
-You can find these nodes in: advanced->model_merging
+您可以在以下位置找到这些节点：advanced->model_merging
 
-This first example is a basic example of a simple merge between two different checkpoints.
+第一个例子是两个不同检查点之间简单合并的基本示例。
 
-You can Load these images in [ComfyUI](https://github.com/comfyanonymous/ComfyUI) to get the full workflow.
+您可以在[ComfyUI](https://github.com/comfyanonymous/ComfyUI)中加载这些图像以获得完整的工作流程。
 
 ![Example](model_merging_basic.png)
 
-In ComfyUI the saved checkpoints contain the full workflow used to generate them so they can be loaded in the UI just like images to get the full workflow that was used to create them.
+在 ComfyUI 中，保存的检查点包含用于生成它们的完整工作流程，因此它们可以像图像一样加载到 UI 中以获取用于创建它们的完整工作流程。
 
-This example is an example of merging 3 different checkpoints using simple block merging where the input, middle and output blocks of the unet can have a different ratio:
+此示例是使用简单块合并来合并 3 个不同检查点的示例，其中 unet 的输入、中间和输出块可以具有不同的比率：
 
 ![Example](model_merging_3_checkpoints.png)
 
-Since Loras are a patch on the model weights they can also be merged into the model:
+由于 Loras 是模型权重的补丁，因此它们也可以合并到模型中：
 
 ![Example](model_merging_lora.png)
 
-You can also subtract models weights and add them like in this example used to create an inpaint model from a non inpaint model with the formula: `(inpaint_model - base_model) * 1.0 + other_model`
-If you are familiar with the "Add Difference" option in other UIs this is how to do it in ComfyUI.
+您还可以减去模型权重并添加它们，就像在本例中一样，使用以下公式从非修复模型创建修复模型：`(inpaint_model - base_model) * 1.0 + other_model` 如果您熟悉其他 UI 中的“添加差异”选项，这就是在 ComfyUI 中执行的操作。
 
 ![Example](model_merging_inpaint.png)
 
-One important thing you should note is that models are merged and saved in the precision that is used for inference on your hardware so usually it will be 16 bit float. If you want do do merges in 32 bit float launch ComfyUI with: --force-fp32
+您应该注意的一件重要事情是，模型会以硬件推理所用的精度进行合并和保存，因此通常为 16 位浮点数。如果您希望以 32 位浮点数进行合并，请使用以下方法启动 ComfyUI：–force-fp32
 
-
-### Advanced Merging
+### 高级合并
 
 #### CosXL
 
-Here is an example of how to create a CosXL model from a regular SDXL model with merging. The requirements are the [CosXL base model](https://huggingface.co/stabilityai/cosxl), the [SDXL base model](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/sd_xl_base_1.0_0.9vae.safetensors) and the SDXL model you want to convert. In this example I used [albedobase-xl](https://civitai.com/models/140737/albedobase-xl).
+以下是如何使用合并功能从常规 SDXL 模型创建 CosXL 模型的示例。要求是[CosXL 基础模型](https://huggingface.co/stabilityai/cosxl)、[SDXL 基础模型](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/sd_xl_base_1.0_0.9vae.safetensors)和要转换的 SDXL 模型。在此示例中，我使用了[albedobase-xl](https://civitai.com/models/140737/albedobase-xl)。
 
 ![Example](model_merging_cosxl.png)
 

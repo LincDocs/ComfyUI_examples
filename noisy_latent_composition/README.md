@@ -1,21 +1,19 @@
-# Noisy Latent Composition Examples
+# 去噪前潜空间合成示例
 
-You can Load these images in [ComfyUI](https://github.com/comfyanonymous/ComfyUI) to get the full workflow.
+您可以在[ComfyUI](https://github.com/comfyanonymous/ComfyUI)中加载这些图像以获得完整的工作流程。
 
-Here are examples of Noisy Latent Composition. Noisy latent composition is when latents are composited together while still noisy before the image is fully denoised. Since general shapes like poses and subjects are denoised in the first sampling steps this lets us for example position subjects with specific poses anywhere on the image while keeping a great amount of consistency.
+以下是噪声潜在合成的示例。噪声潜在合成是指**在图像完全去噪之前，将 Latent 合成在一起，同时仍然有噪声**。由于姿势和主体等一般形状在第一个采样步骤中被去噪，这让我们能够将具有特定姿势的主体定位在图像上的任何位置，同时保持高度的一致性。
 
-Here is an example. This example contains 4 images composited together. 1 background image and 3 subjects.
-The total steps is 16. The latents are sampled for 4 steps with a different prompt for each. The background is 1920x1088 and the subjects are 384x768 each. After these 4 steps the images are still extremely noisy. The subjects are then composited (pasted) onto the background with some feathering applied. The rest of the sampling steps are then run on this composited image.
+这是一个例子。此示例包含 4 张合成在一起的图像。1 张背景图像和 3 张主体图像。总共 16 个步骤。潜像采样分为 4 个步骤，每个步骤的提示不同。背景为 1920x1088，主体为 384x768。经过这 4 个步骤后，图像仍然非常嘈杂。然后将主体合成（粘贴）到背景上，并应用一些羽化效果。然后在此合成图像上运行其余采样步骤。
 
-
-These examples are done with the WD1.5 beta 3 illusion model.
+这些示例是使用 `WD1.5 beta 3 illusion` 模型完成的。
 
 ![Example](noisy_latents_3_subjects.png)
 
-With the positions of the subjects changed:
+随着主体位置的改变：
 
 ![Example](noisy_latents_3_subjects_.png)
 
-You can see that the subjects that were composited from different noisy latent images actually interact with each other because I put "holding hands" in the prompt. You'll also notice how consistent the background is which shows how powerful this method is.
+您可以看到，由不同的嘈杂潜像合成的主体实际上相互交互，因为我在提示中加入了“牵手”。您还会注意到背景有多么一致，这表明这种方法有多么强大。
 
-This technique has some limitations in that it can't control details on subjects like eye color for example but it seems to work extremely well for subject position, pose and general color.
+该技术有一些局限性，例如它无法控制主体的细节，例如眼睛的颜色，但它似乎对于主体的位置、姿势和一般颜色非常有效。

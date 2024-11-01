@@ -1,11 +1,11 @@
-# Upscale Model Examples
+# 放大模型示例
 
-Here is an example of how to use upscale models like ESRGAN. Put them in the models/upscale_models folder then use the UpscaleModelLoader node to load them and the ImageUpscaleWithModel node to use them.
+以下是如何使用 ESRGAN 等高级模型的示例。将它们放在 models/upscale_models 文件夹中，然后使用 UpscaleModelLoader 节点加载它们，并使用 ImageUpscaleWithModel 节点使用它们。
 
-Here is an example:
+以下是一个例子：
 
 ![Example](esrgan_example.png)
 
-You can load this image in [ComfyUI](https://github.com/comfyanonymous/ComfyUI) to get the workflow.
+[您可以在ComfyUI](https://github.com/comfyanonymous/ComfyUI)中加载此图像以获取工作流程。
 
-If you are looking for upscale models to use you can find some on [OpenModelDB](https://openmodeldb.info/)
+如果你正在寻找高档模型，你可以在[OpenModelDB上找到一些](https://openmodeldb.info/)
