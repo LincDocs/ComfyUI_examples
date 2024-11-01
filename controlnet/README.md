@@ -21,7 +21,7 @@ Here's a simple example of how to use controlnets, this example uses the scribbl
 
 Here is the input image I used for this workflow:
 
-<img src="input_scribble_example.png" width="256" />
+<img src="./input_scribble_example.png" width="256" />
 
 ### T2I-Adapter vs ControlNets
 
@@ -33,7 +33,7 @@ T2I-Adapters are used the same way as ControlNets in ComfyUI: using the ControlN
 
 This is the input image that will be used in this example [source](https://commons.wikimedia.org/wiki/File:Stereogram_Tut_Shark_Depthmap.png):
 
-<img src="shark_depthmap.png" width="512" />
+<img src="./shark_depthmap.png" width="512" />
 
 Here is how you use the depth T2I-Adapter:
 
@@ -69,5 +69,5 @@ You can load this image in [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 
 
 Input images:
 
-<img src="pose_present.png" width="256" /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="house_scribble.png" width="256" />
+<img src="./pose_present.png" width="256" /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="./house_scribble.png" width="256" />
 
