@@ -1,26 +1,25 @@
-# SD3 Examples
+# SD3 示例
 
 ## SD3.5
 
-The first step is downloading the text encoder files if you don't have them already from SD3, Flux or other models: ([clip_l.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/clip_l.safetensors), [clip_g.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/clip_g.safetensors) and t5xxl) if you don't have them already in your ComfyUI/models/clip/ folder. For the t5xxl I recommend [t5xxl_fp16.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/t5xxl_fp16.safetensors) if you have more than 32GB ram or [t5xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors) if you don't.
+如果您还没有从 SD3、Flux 或其他模型下载文本编码器文件，请先下载它们：（[clip_l.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/clip_l.safetensors)、[clip_g.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/clip_g.safetensors)和 t5xxl）（如果您的 ComfyUI/models/clip/ 文件夹中还没有这些文件）。对于 t5xxl，如果您的 RAM 超过 32GB，我建议您使用[t5xxl_fp16.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/t5xxl_fp16.safetensors) ，如果没有，我建议您使用[t5xxl_fp8_e4m3fn_scaled.safetensors 。](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors)
 
-The SD3.5 model family contains a large 8B model and a medium 2.5B model. The medium model will be faster and take less memory but might have less complex understanding of some concepts. I recommend downloading both and experimenting with how each of them respond to your prompts.
+SD3.5 模型系列包含一个大型 8B 模型和一个中型 2.5B 模型。中型模型速度更快，占用的内存更少，但对某些概念的理解可能不太复杂。我建议下载这两个模型，并试验它们各自如何响应您的提示。
 
-The [sd3.5_large.safetensors](https://huggingface.co/stabilityai/stable-diffusion-3.5-large/tree/main) and [sd3.5_medium.safetensors](https://huggingface.co/stabilityai/stable-diffusion-3.5-medium/tree/main) files (pick the one you want and put it in your ComfyUI/models/checkpoints/ directory) do not contain text encoder/CLIP weights so you must load them separately to use that file just like in the following example:
+sd3.5_large.safetensors和[sd3.5_medium.safetensors](https://huggingface.co/stabilityai/stable-diffusion-3.5-large/tree/main)文件（选择您想要的文件并将其放在 ComfyUI/models/checkpoints/ 目录中）不包含文本编码器/CLIP 权重，因此您必须单独加载它们才能使用该文件，就像以下示例一样[：](https://huggingface.co/stabilityai/stable-diffusion-3.5-medium/tree/main)
 
 ![Example](sd3.5_text_encoders_example.png)
 
-To use the [sd3.5_large_turbo.safetensors](https://huggingface.co/stabilityai/stable-diffusion-3.5-large-turbo/tree/main) file (put it in your ComfyUI/models/checkpoints/ directory) you can use the above example and set steps to 4 and cfg to 1.2.
+要使用[sd3.5_large_turbo.safetensors](https://huggingface.co/stabilityai/stable-diffusion-3.5-large-turbo/tree/main)文件（将其放在您的 ComfyUI/models/checkpoints/ 目录中），您可以使用上述示例并将步骤设置为 4 并将 cfg 设置为 1.2。
 
-For convenience there is an easy to use all in one checkpoint file [sd3.5_large_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/sd3.5_large_fp8_scaled.safetensors) (put it in your ComfyUI/models/checkpoints/ directory) that can be used in the default workflow like any other checkpoint files. There is also one for SD3.5 medium: [sd3.5_medium_incl_clips_t5xxlfp8scaled.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/sd3.5_medium_incl_clips_t5xxlfp8scaled.safetensors)
+为方便起见，有一个易于使用的一体化检查点文件[sd3.5_large_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/sd3.5_large_fp8_scaled.safetensors)（将其放在 ComfyUI/models/checkpoints/ 目录中），可像任何其他检查点文件一样在默认工作流程中使用。还有一个适用于 SD3.5 中型的文件：[sd3.5_medium_incl_clips_t5xxlfp8scaled.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/blob/main/sd3.5_medium_incl_clips_t5xxlfp8scaled.safetensors)
 
-See this workflow for an example.
+请参阅此工作流程作为示例。
 
 ![Example](sd3.5_simple_example.png)
 
-As a reminder you can save these image files and drag or load them into ComfyUI to get the workflow.
+提醒一下，您可以保存这些图像文件并将其拖动或加载到 ComfyUI 中以获取工作流程。
 
-
-[Old SD3 medium examples](README_old.md)
+[旧 SD3 介质示例](https://comfyanonymous.github.io/ComfyUI_examples/sd3/README_old.html)
 
 
