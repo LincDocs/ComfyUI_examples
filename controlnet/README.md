@@ -1,4 +1,4 @@
-# # ControlNet 和 T2I-Adapter 示例
+# ControlNet 和 T2I-Adapter 示例
 
 请注意，在这些示例中，原始图像直接传递到 ControlNet/T2I 适配器。
 

@@ -2,7 +2,7 @@
 
 ![Example](inpaint_example.png)
 
-在此示例中，我们将使用此图像。下载它并将其放在您的输入文件夹中。
+在此示例中，我们将使用此图像。下载它并将其放在您的输入文件夹中 (安装路径/ComfyUI/input)。
 
 ![Example](yosemite_inpaint_example.png)
 
